@@ -26,6 +26,7 @@ html, body{
 .main-container{
    width: 100vw;
    font-size: 16px;
+   min-width: 300px;
    margin: 0;
    padding: 0;
 }
@@ -38,39 +39,51 @@ html, body{
    color: var(--Dark-Grayish-Violet);
    align-items: center;
    height: 20px;
-   width: 90%;
+   width: 100%;
    padding-top: 2%;
    padding-bottom: 2%;
    margin: none;
 }
 
 .logo{
-margin-right: 20%;
+margin-right: 18%;
 margin-left: 2%;
 cursor: pointer;
 }
 
 #nav-items{
    display: flex;
+   justify-items: center;
    list-style: none;
+   text-align: center;
+   width: 100%;
 }
 
-#nav-items li{
+#nav-items li a:not(.view-button)  {
 margin-left: 20px;
 font-size: 10px;
 cursor: pointer;
+color: var(--Dark-Grayish-Violet);
+}
+
+#nav-items li a:not(.view-button):hover {
+   color: var(--Very-Dark-Violet);
 }
 
 .view-button{
-border: 1px  solid var(--Very-Dark-Violet);
-padding: 5px;
-
+   padding: 6px;
+   margin-left: 20px;
+   font-size: 10px;
+   cursor: pointer;
+   border: 1px solid var(--Dark-Grayish-Violet);
+   color: var(--Dark-Grayish-Violet);
 }
 
-
-#nav-items li:hover {
-   color: var(--Very-Dark-Violet);
+.view-button:hover{
+  background-color: var(--Dark-Violet); 
+  color: var(--Very-Light-Gray);
 }
+
 /* .Mobile-menu-icon */
 
 #Mobile-menu-icon{
@@ -107,6 +120,7 @@ header >* {
    word-wrap: break-word;
    margin-right: 70%;
    margin-left: 5%;
+   min-width: 209px;
 }
 
 header p, a{
@@ -122,9 +136,18 @@ padding: 5px;
 cursor: pointer;
 }
 
+header h1::before{
+content: " ";
+display: block;
+background: var(--Dark-Grayish-Violet);
+height: 2px ;
+width: 100px;
+}
+
 .header-photo img{
    position: absolute ;
    height: 65%;
+   min-width: 209px;
    margin-left: 60%;
    margin-top: 13%;
    opacity: 90%;
@@ -183,6 +206,7 @@ section{
    background-repeat: no-repeat;
    background-position: right;
 }
+
 
 .banner h1{
    margin-right: 20%;
@@ -258,9 +282,13 @@ margin-left: 25%;
    cursor: pointer;
 }
 
+.footer-ul li a:hover{
+text-decoration:underline ;
+}
+
 /* media query */
 
-@media screen and (max-width: 540px){
+@media screen and (max-width: 545px){
 
    .main-container{
       display: flex;
@@ -295,8 +323,8 @@ margin-left: 25%;
          cursor: pointer;
 }
 
-#nav-items li:hover {
-   color: var(--Very-Light-Gray);
+#nav-items li a:hover {
+   color: var(--Very-Light-Gray) !important;
 }
 
 .view-button{
@@ -337,6 +365,15 @@ padding: 5px;
          margin-left: auto;
          
       }
+
+      header h1::before{
+         content: " ";
+         display: block;
+         background: var(--Dark-Grayish-Violet);
+         height: 2px ;
+         width: 100px;
+         margin-left: 16%;
+         }
 
       .different{
       text-align: center;

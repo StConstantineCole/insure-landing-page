@@ -1,7 +1,7 @@
 const closebtn = document.getElementById('Mobile-close-icon');
 const menubtn = document.getElementById('Mobile-menu-icon');
 const navitems = document.getElementById('nav-items');
-const navlinks = document.getElementById('nav-links');
+const navlinks = document.querySelectorAll('#nav-items li');
 
 
 
@@ -23,6 +23,21 @@ function closemenu() {
     }
 }
 
+function closemenubylink() {
+    if (navitems.style.display != 'none') {
+        navitems.style.display = 'none';
+        closebtn.style.display = 'none';
+        menubtn.style.display = 'block';
+    }
+}
+  
+
+
 menubtn.addEventListener('click', openmenu);
+
 closebtn.addEventListener('click', closemenu);
 
+navlinks.forEach(el => {
+    el.addEventListener('click', closemenubylink);
+});
+// console.log(navlinks);
